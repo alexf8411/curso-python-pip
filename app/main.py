@@ -5,16 +5,17 @@ import pandas as pd
 
 def run():
   '''
+  #esto es sin pandas
   data = list(filter(lambda item : item['Continent'] == 'South America',data))
   countries = list(map(lambda x: x['Country'], data))
   percentages = list(map(lambda x: x['World Population Percentage'], data))
   '''
 
-  df = pd.read_csv('data.csv')
-  df = df[df['Continent'] == 'Africa']
+  df = pd.read_csv('data.csv') #utiliza libreria pandas para leer un csv 
+  df = df[df['Continent'] == 'Europe'] #seleccionar solos los datos donde el continente sea Africa
 
-  countries = df['Country'].values
-  percentages = df['World Population Percentage'].values
+  countries = df['Country'].values #obtener los valores de la columna
+  percentages = df['World Population Percentage'].values #lo mismo de arriba pero word pup..
   charts.generate_pie_chart(countries, percentages)
 
   data = read_csv.read_csv('data.csv')
